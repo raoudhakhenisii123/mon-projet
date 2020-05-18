@@ -31,8 +31,8 @@ export const register = formData => dispatch =>{
         payload:res.data
     }))
     .catch(err=>dispatch({
-        type:REGISTER_FAIL,
-        payload:err.response.data.msg
+        type: REGISTER_FAIL,
+        payload: err.response.data.msg
     }))
 }
 // Login user
@@ -49,7 +49,7 @@ export const login = formData => dispatch =>{
     }))
     .catch(err=>dispatch({
         type:LOGIN_FAIL,
-        payload:err.response.data.msg
+        payload:err.response.msg
     }))
 }
 //Logout User

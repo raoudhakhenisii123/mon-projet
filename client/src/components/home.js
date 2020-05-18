@@ -1,36 +1,41 @@
 import React from 'react'
-import {connect} from 'react-redux'
-import {loadUser} from '../actions/authActions'
-import  ModalNavbar from './ModalNavbar'
+import { connect } from 'react-redux'
+import { loadUser } from '../actions/authActions'
+import ModalNavbar from './ModalNavbar'
 import CarouselHome from './CarouselHome'
 import TroopList from './TroopList'
 import TroopForm from './TroopForm'
+import DecorForm from './DecorFrom'
+import CakeForm from './CakesForm'
 
-class Home extends React.Component{
-    componentDidMount (){
+class Home extends React.Component {
+    componentWillMount() {
         this.props.loadUser()
     }
-    render()  {
-        return(
+    render() {
+        return (
             <div>
                 <h1>Welcome to Dream's Night</h1>
                 <div>
-                <ModalNavbar/>
+                    <ModalNavbar />
                 </div>
                 <div>
-                    <TroopForm/>
+                    <TroopForm />
                 </div>
                 <div>
-                    <CarouselHome/>
-               </div>
-               <div>
-                   <TroopList/>
+                    <CarouselHome />
+                </div>
+                <div>
+                    <DecorForm />
 
-               </div>
-    
+                </div>
+                <div>
+                    <CakeForm/>
+                </div> 
+
             </div>
         )
     }
-    
+
 }
-export default connect( null, {loadUser})(Home)
+export default connect(null, { loadUser })(Home)

@@ -1,15 +1,16 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 // import { v4 as uuidv4 } from 'uuid';
-import { addTroops, editTroops, clearTroops } from '../actions/troopsActions'
+import { addcakes, editcakes, clearCakes } from '../actions/cakesActions'
 
-class TroopForm extends Component {
+class CakeForm extends Component {
     constructor(props) {
         super(props)
         this.state = {
             nom: "",
             lienimg: "",
-            thèmes: ""
+            type: "",
+            quantité: ""
 
         }
     }
@@ -24,26 +25,30 @@ class TroopForm extends Component {
                     <input name="nom" type="text" onChange={this.handleChange} value={this.state.nom} />
                 </div>
                 <div>
-                    <label> lienImg:</label>
+                    <label> Image:</label>
                     <input name="lienimg" type="text" onChange={this.handleChange} value={this.state.lienimg} />
                 </div>
                 <div>
-                    <label> Theme:</label>
-                    <input name="thèmes" type="text" onChange={this.handleChange} value={this.state.thèmes} />
+                    <label> type:</label>
+                    <input name="type" type="text" onChange={this.handleChange} value={this.state.type} />
+                </div>
+                <div>
+                    <label> quantité:</label>
+                    <input name="quantité" type="text" onChange={this.handleChange} value={this.state.quantité} />
                 </div>
                 <div>
                     <button className="btn-warning" onClick={e => {
                         e.preventDefault()
                         if (this.props.save) {
-                            this.props.editTroops(this.state)
-                            this.props.clearTroops()
+                            this.props.editcakes(this.state)
+                            this.props.clearCakes()
                         }
                         else {
-                            this.props.addTroops(this.state)
+                            this.props.addcakes(this.state)
                         }
                         this.setState({ nom: "", lienimg: "", thèmes: "" })
                     }}>
-                        {this.props.save ? 'EDIT TROOP' : 'ADD TROOP'} </button>
+                        {this.props.save ? 'EDIT CAKE' : 'ADD CAKE'} </button>
                 </div>
             </from>
 
@@ -53,7 +58,7 @@ class TroopForm extends Component {
 }
 const mapStateToProps = state => {
     return {
-        save: state.troop.saved
+        save: state.cake.saved
     }
 }
-export default connect(mapStateToProps, { addTroops, editTroops, clearTroops })(TroopForm)
+export default connect(mapStateToProps, { addcakes, editcakes, clearCakes })(CakeForm)

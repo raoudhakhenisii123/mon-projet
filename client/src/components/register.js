@@ -53,15 +53,15 @@ componentWillReceiveProps(nextProps){
 render(){
     
     return(
-        <div>
+        <div className="title_R">
         <h1>Register Page</h1>
-        <form>
-            <input name="firstname" type="text" onChange={this.handleChange} placeholder="enter please your name"/><br/>
-            <input name="lastname" type="text" onChange={this.handleChange} placeholder="enter please your lastname"/><br/>
-            <input name="email" type="text" onChange={this.handleChange} placeholder="enter please your email"/><br/>
-            <input name="password" type="password" onChange={this.handleChange} placeholder="enter please your password"/>
+        <form className="class_form">
+            <input  className="class-input" name="firstname" type="text" onChange={this.handleChange} placeholder="enter  your name"/><br/>
+            <input  className="class-input"   name="lastname" type="text" onChange={this.handleChange} placeholder="enter  your lastname"/><br/>
+            <input className="class-input"  name="email" type="text" onChange={this.handleChange} placeholder="enter  your email"/><br/>
+            <input className="class-input" name="password" type="password" onChange={this.handleChange} placeholder="enter please your password"/>
         </form>
-        <button btn btn-info onClick={this.registerNow}> Register</button>
+        <button className="btn btn-info button-form" onClick={this.registerNow}> Register</button>
         </div>
 
 

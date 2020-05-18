@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 // import { v4 as uuidv4 } from 'uuid';
-import { addTroops, editTroops, clearTroops } from '../actions/troopsActions'
+import { addDecors, editDecors , clearDecors } from '../actions/decorsActions'
 
-class TroopForm extends Component {
+class DecorForm extends Component {
     constructor(props) {
         super(props)
         this.state = {
@@ -24,7 +24,7 @@ class TroopForm extends Component {
                     <input name="nom" type="text" onChange={this.handleChange} value={this.state.nom} />
                 </div>
                 <div>
-                    <label> lienImg:</label>
+                    <label> Image:</label>
                     <input name="lienimg" type="text" onChange={this.handleChange} value={this.state.lienimg} />
                 </div>
                 <div>
@@ -35,15 +35,15 @@ class TroopForm extends Component {
                     <button className="btn-warning" onClick={e => {
                         e.preventDefault()
                         if (this.props.save) {
-                            this.props.editTroops(this.state)
-                            this.props.clearTroops()
+                            this.props.editDecors(this.state)
+                            this.props.clearDecors()
                         }
                         else {
-                            this.props.addTroops(this.state)
+                            this.props.addDecors(this.state)
                         }
                         this.setState({ nom: "", lienimg: "", thèmes: "" })
                     }}>
-                        {this.props.save ? 'EDIT TROOP' : 'ADD TROOP'} </button>
+                        {this.props.save ? 'EDIT DECOR' : 'DECOR'} </button>
                 </div>
             </from>
 
@@ -53,7 +53,7 @@ class TroopForm extends Component {
 }
 const mapStateToProps = state => {
     return {
-        save: state.troop.saved
+        save: state.Decor.saved
     }
 }
-export default connect(mapStateToProps, { addTroops, editTroops, clearTroops })(TroopForm)
+export default connect(mapStateToProps, { addDecors, editDecors , clearDecors })(DecorForm)

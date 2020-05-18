@@ -17,7 +17,7 @@ app.use('/api/salles', require('./routes/salles'))
 app.use('/api/troupes', require('./routes/troupe'))
 app.use('/api/vehicule', require('./routes/vehicule'))
 app.use('/api/photographie', require('./routes/photograpie'))
-app.use('/api/gateaux', require('./routes/gateaux'))
+app.use('/api/cakes', require('./routes/gateaux'))
 app.use('/api/decors', require('./routes/decors'))
 
 
