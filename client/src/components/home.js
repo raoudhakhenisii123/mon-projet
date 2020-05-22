@@ -15,7 +15,7 @@ class Home extends React.Component {
     render() {
         return (
             <div>
-                <h1>Welcome to Dream's Night</h1>
+                {/* <h1>Welcome to Dream's Night</h1> */}
                 <div>
                     <ModalNavbar />
                 </div>

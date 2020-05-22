@@ -9,15 +9,18 @@
   width: 40%;
 }
 .title_R{
- color : rgb(78, 4, 78); 
-  margin: 2em !important;
-  font-size: 40px ; 
-  text-align: center; 
+ color : rgb(202, 23, 139); 
+ margin: 2em !important;
+ padding-top: 55px;
+font-size: 30px ; 
+text-align: center; 
  font-family:"Comic Sans MS", cursive, sans-serif ;
- text-shadow: 2px 3px rgb(78, 4, 52) ;
+ text-shadow: 2px 3px rgb(202, 23, 139) ;
+float:-50;
 }
 .logo{
   margin: 5em;
+  padding-bottom: 75px;
 }
 body{
   background-image: url(https://images.pexels.com/photos/540522/pexels-photo-540522.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260);
@@ -41,12 +44,15 @@ font-size: 20px;
 }
 
 .button_login{
+ display: flex;
+ justify-content: flex-end;
 background-color: pink;
 border: solid 2px black;
 border-radius: 5px;
 width: 85px;
 font-family:"Comic Sans MS", cursive, sans-serif; 
-
+/* margin: auto; */
+padding-top:  80px; ;
 }
 
 .button-form{
@@ -57,11 +63,15 @@ border: solid 2px black;
 width: 85px;
 }
 
-.button-connected > li{
+/* .button-connected > li{
 display: flex;
 justify-content: space-between;
 
+} */
+.nav-menu{
+   border-color: solid 2px black;
 }
+
 
 
 

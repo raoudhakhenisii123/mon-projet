@@ -30,15 +30,19 @@ class Login extends Component {
 
         }
     }
-    loginNow = () => {
-        if (this.state.email === '' || this.state.password === '') {
+loginNow = (e) => {
+
+       
+        if(this.state.email === ""|| this.state.password === "") {
+            e.preventDefault()
             let id = uuidv4()
-            this.props.setalert('Please enter your credentials befor !', 'danger', id)
+            this.props.setalert('Please enter your credentials before !', 'danger', id)
             setTimeout(() => {
                 this.props.removealert(id)
                 this.props.clearError()
             }, 5000)
         } else {
+           
             this.props.login({
                 email: this.state.email,
                 password: this.state.password
@@ -52,13 +56,14 @@ class Login extends Component {
                 <form className="class_form">
                     <div>
                         <input  className="class-input" name="email" type="text" onChange={this.handleChange} placeholder="enter please your email" /><br />
-                    </div>
-                    <div> <input  className="class-input"  name="password" type="password" onChange={this.handleChange} placeholder="enter please your password" />
-                    </div>
+                        </div>
+                        <div>
+                     <input  className="class-input"  name="password" type="password" onChange={this.handleChange} placeholder="enter please your password" />
+                     </div>
                 
-                <div>
-                    <button className="btn btn-info button-form"   onClick={this.loginNow}> login</button>
-                </div>
+                {/* <div> */}
+                    <button  className="btn btn-info " onClick={(e)=>this.loginNow(e.preventDefault())}>  login </button>
+                    {/* </div> */}
                 </form>
             </div>
 

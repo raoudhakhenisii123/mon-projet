@@ -18,7 +18,7 @@ class TroopForm extends Component {
     }
     render() {
         return (
-            <from>
+            <form>
                 <div>
                     <label>  Name: </label>
                     <input name="nom" type="text" onChange={this.handleChange} value={this.state.nom} />
@@ -45,7 +45,7 @@ class TroopForm extends Component {
                     }}>
                         {this.props.save ? 'EDIT TROOP' : 'ADD TROOP'} </button>
                 </div>
-            </from>
+            </form>
 
         )
     }
