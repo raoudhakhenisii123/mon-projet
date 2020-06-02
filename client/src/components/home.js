@@ -17,21 +17,21 @@ class Home extends React.Component {
             <div>
                 {/* <h1>Welcome to Dream's Night</h1> */}
                 <div>
-                    <ModalNavbar />
+                    {/* <ModalNavbar /> */}
                 </div>
-                <div>
+                {/* <div>
                     <TroopForm />
-                </div>
+                </div> */}
                 <div>
                     <CarouselHome />
                 </div>
-                <div>
+                {/* <div>
                     <DecorForm />
 
                 </div>
                 <div>
                     <CakeForm/>
-                </div> 
+                </div>  */}
 
             </div>
         )

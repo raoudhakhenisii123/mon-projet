@@ -10,6 +10,7 @@ mongoose.connect(db,{ useUnifiedTopology: true ,useNewUrlParser: true}, (err)=>{
     console.log('database is connected....')
 })
 //define routes
+// app.use('/api/admin', require('./routes/admin'))
 app.use('/api/user', require('./routes/user'))
 app.use('/api/auth', require('./routes/auth'))
 app.use('/api/reservation', require('./routes/reservation'))

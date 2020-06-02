@@ -11,7 +11,8 @@ router.post('/', [
     check('firstname', 'Please enter your firstname').not().isEmpty(),
     check('lastname', 'Please enter your lastname').not().isEmpty(),
     check('email', 'Please enter your email').isEmail(),
-    check('password', 'password must be 6 or more caracters').not().isEmpty().isLength({min :8})
+    check('password', 'password must be 6 or more caracters').not().isEmpty().isLength({min :8}),
+    check('role', 'Please enter your role').not().isEmpty()
 
 ], (req, res)=>{
     const errors=validationResult(req)
@@ -19,7 +20,7 @@ router.post('/', [
         return res.json({errors:errors.array()})
 
     }
-    const {firstname,lastname, email,password}=req.body
+    const {firstname,lastname, email,password, role}=req.body
     User.findOne({email})
     .then(user=>{
         if(user){
@@ -30,7 +31,8 @@ router.post('/', [
                 firstname,
                 lastname,
                 email,
-                password
+                password,
+                role
             })
             bcrypt.genSalt(10, (err,salt)=>{
                 bcrypt.hash(user.password, salt,(err, hashedPassword)=>{

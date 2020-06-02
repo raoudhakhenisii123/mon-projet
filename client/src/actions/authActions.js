@@ -47,10 +47,10 @@ export const login = formData => dispatch =>{
         type:LOGIN_SUCCESS,
         payload:res.data
     }))
-    .catch(err=>dispatch({
-        type:LOGIN_FAIL,
-        payload:err.response.msg
-    }))
+    // .catch(err=>dispatch({
+    //     type:LOGIN_FAIL,
+    //     payload:err.response.msg
+    // }))
 }
 //Logout User
 export const logout=()=>dispatch=>{

@@ -9,6 +9,9 @@ import Login from './components/login'
 import TroopList from './components/TroopList'
 import DecorList from './components/DecorsList'
 import CakesList from './components/CakesList'
+import CakeForm from './components/CakesForm'
+import DecorForm from './components/DecorFrom'
+import TroopForm from './components/TroopForm'
 import Alerts from './components/Alerts'
 import setAuthToken from './utils/setAuthToken'
 import PrivateRoute from './components/PrivateRoute'
@@ -32,6 +35,12 @@ function App() {
           <Route exact path="/Troops" component={TroopList} />
           <Route exact path="/Decoration" component={DecorList} />
           <Route exact path="/cakes" component={CakesList} />
+          <Route exact path="/Cakes" component={CakeForm} />
+          <Route exact path="/decors" component={DecorForm} />
+          <Route exact path="/troop" component={TroopForm} />
+          {/* <Route exact path="/cakees" component={CakesList} />
+          <Route exact path="/decoors" component={DecorList} />
+          <Route exact path="/trroop" component={TroopList} /> */}
 
         </Switch>
       </div>

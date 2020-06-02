@@ -6,15 +6,14 @@ import {get_cakes} from '../actions/cakesActions'
 class CakesList extends React.Component{
 
 componentDidMount(){
-    this.props.getDecors()
+    this.props.get_cakes()
 }
 
 render (){
     return(
         <div>
             {
-                this.props.cakes.length===0 ? (
-                <h4>Your list Troops id empty</h4>
+                this.props.cakes.length===0 ? ( <h4>Your list Troops id empty</h4>
                 ): (
                     this.props.cakes.cakes.map(cake => <CakesItem   cakes={cake}/>))
             }

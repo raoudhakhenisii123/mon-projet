@@ -15,7 +15,7 @@ export const get_Decors = () => dispatch => {
         }))
         .catch(err => dispatch({
             type: DECOR_ERROR,
-            payload: err.response.msg
+            payload: err.response.data.msg
         }))
 
 }

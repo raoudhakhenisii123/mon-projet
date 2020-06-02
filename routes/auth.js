@@ -19,13 +19,14 @@ router.get('/', auth,(req,res)=>{
 //login the user
 router.post('/',[
     check('email', 'Please enter  a valid email').isEmail(),
-    check('password', 'Pasword is required').not().isEmpty()
+    check('password', 'Password is required').not().isEmpty(),
+    check('role', 'choose your role').not().isEmpty()
 ], (req, res)=>{
     const errors=validationResult(req)
     if(!errors.isEmpty()){
         return res.json({errors:errors.array()})
     }
-    const {email, password}= req.body
+    const {email, password, role}= req.body
     User.findOne({email})
     .then(user=>{
         if(!user) { 

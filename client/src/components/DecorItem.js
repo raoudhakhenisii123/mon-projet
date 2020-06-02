@@ -2,17 +2,17 @@ import React from 'react'
 import { connect } from 'react-redux'
 import {deleteDecors, saveDecors } from '../actions/decorsActions'
 
-const DecorsItem = ({ decors, saveDecors, deleteDecors}) => {
+const DecorsItem = ({decor, saveDecors, deleteDecors}) => {
     return (
         <div>
             <h1>
-                {decors.nom}
+                {decor.nom}
             </h1>
-            <img src={decors.lienimg} />
-            <h2>{decors.thèmes}</h2>
+            <img src={decor.lienimg} />
+            <h2>{decor.thèmes}</h2>
             <div className="btns">
-                <button className="btn btn-info" onClick={() => saveDecors(decors) }>Edit</button>
-                <button className="btn btn-danger" onClick={() => deleteDecors(decors._id) }>Delete</button>
+                <button className="btn btn-info" onClick={() => saveDecors(decor) }>Edit</button>
+                <button className="btn btn-danger" onClick={() => deleteDecors(decor._id) }>Delete</button>
             </div>
 
         </div>
